@@ -48,3 +48,12 @@ body {
     background: yellow;
     position: absolute;
 }
+#infos {
+    font-size: 20px;
+    margin: 10px;
+    color: white;
+}
+
+#vie, #score {
+    font-weight: bold;
+}
