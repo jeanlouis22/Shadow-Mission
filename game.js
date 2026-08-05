@@ -36,7 +36,19 @@ document.addEventListener("keydown", function(event){
 
         let mouvement = setInterval(function(){
             balle.style.left = balle.offsetLeft + 10 + "px";
+if (
+    balle.offsetLeft < ennemi.offsetLeft + 50 &&
+    balle.offsetLeft + 10 > ennemi.offsetLeft
+) {
+    ennemi.style.display = "none";
+    balle.remove();
+    clearInterval(mouvement);
 
+    setTimeout(function(){
+        ennemi.style.display = "block";
+        positionEnnemi = 700;
+    }, 2000);
+}
             if(balle.offsetLeft > 800){
                 balle.remove();
                 clearInterval(mouvement);
