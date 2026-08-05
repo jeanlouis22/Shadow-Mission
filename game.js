@@ -23,3 +23,26 @@ document.addEventListener("keydown", function(event) {
     joueur.style.left = position + "px";
 
 });
+document.addEventListener("keydown", function(event){
+
+    if(event.key === " "){
+        let balle = document.createElement("div");
+        balle.className = "balle";
+
+        balle.style.left = position + 50 + "px";
+        balle.style.bottom = "50px";
+
+        document.getElementById("jeu").appendChild(balle);
+
+        let mouvement = setInterval(function(){
+            balle.style.left = balle.offsetLeft + 10 + "px";
+
+            if(balle.offsetLeft > 800){
+                balle.remove();
+                clearInterval(mouvement);
+            }
+
+        },50);
+    }
+
+});
