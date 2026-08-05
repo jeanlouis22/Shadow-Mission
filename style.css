@@ -1,0 +1,34 @@
+body {
+    background: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#jeu {
+    width: 800px;
+    height: 400px;
+    background: #333;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+#joueur {
+    width: 40px;
+    height: 40px;
+    background: blue;
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+}
+
+#ennemi {
+    width: 40px;
+    height: 40px;
+    background: red;
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+}
