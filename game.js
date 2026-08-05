@@ -1,7 +1,12 @@
+
 const joueur = document.getElementById("joueur");
+const ennemi = document.getElementById("ennemi");
 
 let position = 100;
+let positionEnnemi = 700;
 
+
+// Déplacement du joueur
 document.addEventListener("keydown", function(event) {
 
     if (event.key === "ArrowRight") {
@@ -23,9 +28,13 @@ document.addEventListener("keydown", function(event) {
     joueur.style.left = position + "px";
 
 });
+
+
+// Tir du joueur
 document.addEventListener("keydown", function(event){
 
-    if(event.key === " "){
+    if(event.code === "Space"){
+
         let balle = document.createElement("div");
         balle.className = "balle";
 
@@ -34,42 +43,62 @@ document.addEventListener("keydown", function(event){
 
         document.getElementById("jeu").appendChild(balle);
 
-        let mouvement = setInterval(function(){
-            balle.style.left = balle.offsetLeft + 10 + "px";
-if (
-    balle.offsetLeft < ennemi.offsetLeft + 50 &&
-    balle.offsetLeft + 10 > ennemi.offsetLeft
-) {
-    ennemi.style.display = "none";
-    balle.remove();
-    clearInterval(mouvement);
 
-    setTimeout(function(){
-        ennemi.style.display = "block";
-        positionEnnemi = 700;
-    }, 2000);
-}
-            if(balle.offsetLeft > 800){
+        let mouvement = setInterval(function(){
+
+            balle.style.left = balle.offsetLeft + 10 + "px";
+
+
+            // Collision avec l'ennemi
+            if (
+                balle.offsetLeft < ennemi.offsetLeft + 50 &&
+                balle.offsetLeft + 10 > ennemi.offsetLeft
+            ){
+
+                ennemi.style.display = "none";
+
                 balle.remove();
                 clearInterval(mouvement);
+
+
+                setTimeout(function(){
+
+                    ennemi.style.display = "block";
+                    positionEnnemi = 700;
+                    ennemi.style.left = positionEnnemi + "px";
+
+                },2000);
             }
 
+
+            // Supprimer la balle quand elle sort de l'écran
+            if(balle.offsetLeft > 800){
+
+                balle.remove();
+                clearInterval(mouvement);
+
+            }
+
+
         },50);
+
     }
 
 });
-let ennemi = document.getElementById("ennemi");
 
-let positionEnnemi = 700;
 
+// Mouvement de l'ennemi
 setInterval(function(){
 
     positionEnnemi -= 2;
 
     ennemi.style.left = positionEnnemi + "px";
 
+
     if(positionEnnemi < 100){
+
         positionEnnemi = 700;
+
     }
 
 },50);
