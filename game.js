@@ -46,3 +46,18 @@ document.addEventListener("keydown", function(event){
     }
 
 });
+let ennemi = document.getElementById("ennemi");
+
+let positionEnnemi = 700;
+
+setInterval(function(){
+
+    positionEnnemi -= 2;
+
+    ennemi.style.left = positionEnnemi + "px";
+
+    if(positionEnnemi < 100){
+        positionEnnemi = 700;
+    }
+
+},50);
