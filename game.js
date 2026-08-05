@@ -159,3 +159,25 @@ document.getElementById("tirer").addEventListener("click", function(){
     },50);
 
 });
+document.getElementById("droite").onclick = function(){
+
+    position += 20;
+
+    if(position > 760){
+        position = 760;
+    }
+
+    joueur.style.left = position + "px";
+};
+
+
+document.getElementById("gauche").onclick = function(){
+
+    position -= 20;
+
+    if(position < 0){
+        position = 0;
+    }
+
+    joueur.style.left = position + "px";
+};
