@@ -4,7 +4,9 @@ const ennemi = document.getElementById("ennemi");
 
 let position = 100;
 let positionEnnemi = 700;
+let score = 0;
 
+const affichageScore = document.getElementById("score");
 
 // Déplacement du joueur
 document.addEventListener("keydown", function(event) {
@@ -56,7 +58,8 @@ document.addEventListener("keydown", function(event){
             ){
 
                 ennemi.style.display = "none";
-
+score += 10;
+affichageScore.textContent = score;
                 balle.remove();
                 clearInterval(mouvement);
 
