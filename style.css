@@ -15,29 +15,23 @@ body {
     border: 3px solid white;
 }
 
+
 #joueur {
-
-    width: 50px;
-
-    height: 70px;
-
-    background: green;
-
-    border-radius: 10px;
-
+    width: 60px;
+    height: 80px;
+    background-image: url("images/soldat.png");
+    background-size: cover;
+    background-position: center;
     position: absolute;
-
     bottom: 20px;
-
     left: 100px;
-
 }
-
 #ennemi {
-    width: 50px;
-    height: 70px;
-    background: darkred;
-    border-radius: 10px;
+    width: 60px;
+    height: 80px;
+    background-image: url("images/ennemi.png");
+    background-size: cover;
+    background-position: center;
     position: absolute;
     bottom: 20px;
     left: 700px;
