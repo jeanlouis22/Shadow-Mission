@@ -34,12 +34,13 @@ body {
 }
 
 #ennemi {
-    width: 40px;
-    height: 40px;
-    background: red;
+    width: 50px;
+    height: 70px;
+    background: darkred;
+    border-radius: 10px;
     position: absolute;
     bottom: 20px;
-    right: 100px;
+    left: 700px;
 }
 .balle {
     width: 10px;
