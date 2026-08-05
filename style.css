@@ -57,3 +57,13 @@ body {
 #vie, #score {
     font-weight: bold;
 }
+#commandes {
+    margin-top: 20px;
+}
+
+#commandes button {
+    font-size: 30px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+}
