@@ -107,7 +107,8 @@ setInterval(function(){
 },50);
 // Commandes téléphone
 
-document.getElementById("droite").addEventListener("touchstart", function(){
+document.getElementById("droite").addEventListener("click", function(){
+
     position += 20;
 
     if(position > 760){
@@ -115,10 +116,12 @@ document.getElementById("droite").addEventListener("touchstart", function(){
     }
 
     joueur.style.left = position + "px";
+
 });
 
 
-document.getElementById("gauche").addEventListener("touchstart", function(){
+document.getElementById("gauche").addEventListener("click", function(){
+
     position -= 20;
 
     if(position < 0){
@@ -126,10 +129,11 @@ document.getElementById("gauche").addEventListener("touchstart", function(){
     }
 
     joueur.style.left = position + "px";
+
 });
 
 
-document.getElementById("tirer").addEventListener("touchstart", function(){
+document.getElementById("tirer").addEventListener("click", function(){
 
     let balle = document.createElement("div");
     balle.className = "balle";
@@ -144,9 +148,12 @@ document.getElementById("tirer").addEventListener("touchstart", function(){
 
         balle.style.left = balle.offsetLeft + 10 + "px";
 
+
         if(balle.offsetLeft > 800){
+
             balle.remove();
             clearInterval(mouvement);
+
         }
 
     },50);
